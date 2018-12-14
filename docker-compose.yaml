@@ -1,0 +1,11 @@
+version: "2.3"
+
+services:
+        learning:
+                container_name: code2vec
+                image: tensorflow/tensorflow:latest-gpu-py3
+                runtime: nvidia
+                volumes: 
+                        - ./:/opt/code2vec
+                working_dir: /opt/code2vec
+                command: bash run.sh

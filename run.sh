@@ -16,3 +16,6 @@ model_dir=models/${type}-${now}
 mkdir -p ${model_dir}
 set -e
 python3 -u code2vec.py --data ${data} --test ${test_data} --save ${model_dir}/saved_model
+
+# prediction
+python3 code2vec.py --load ${model_dir}/saved_model --test ${test_data}
